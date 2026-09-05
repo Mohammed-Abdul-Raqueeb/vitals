@@ -6,6 +6,22 @@ Reads `/proc` directly on Linux. Zero dependencies — standard library only.
 Vitals runs natively on Linux because it reads the Linux `/proc` filesystem directly.
 
 The test suite can run on Windows using fabricated procfs fixtures, but the live monitor requires Linux or WSL on Windows.
+
+## Linux / WSL quick start
+
+Vitals reads the Linux `/proc` filesystem, so the live monitor must run in a Linux environment.
+
+On Ubuntu or WSL:
+
+```bash
+sudo apt update
+sudo apt install build-essential
+
+git clone https://github.com/Mohammed-Abdul-Raqueeb/vitals.git
+cd vitals
+
+cargo run --release
+
 ## Build & Run
 ```bash
 cargo build --release
