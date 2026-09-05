@@ -79,3 +79,10 @@ docs/DESIGN.md   tradeoffs and interview defense
 - GUI (Tauri needs `webkit2gtk`+Node, unavailable in the dev sandbox)
 - Per-socket byte attribution (needs eBPF; `/proc/net/tcp` only gives ownership, not traffic — see DESIGN.md)
 - Interactive TUI keys (sort/kill) — needs termios, dropped to stay dependency-free
+
+## Usage examples
+
+Run a single JSON snapshot:
+
+```bash
+cargo run --release -- --json --once
