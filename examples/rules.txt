@@ -1,0 +1,14 @@
+# vitals alert rules
+# Syntax: alert <name> <target> <metric> <op> <value> for <duration> [clear <value>]
+#   target: system | process:<comm> | process:*
+#   metric: cpu_pct mem_pct rss read_bps write_bps net_rx_bps net_tx_bps threads proc_count
+#   op:     > or <
+# `clear` sets a lower (or higher, for `<`) hysteresis boundary so the alert
+# doesn't flap; if omitted it defaults to the fire threshold.
+
+alert high_cpu     system         cpu_pct    > 80    for 10s  clear 60
+alert high_mem      system        mem_pct    > 90    for 15s  clear 75
+alert net_flood     system        net_rx_bps > 100MB for 5s
+alert any_cpu_hog   process:*     cpu_pct    > 50    for 5s
+alert node_leak     process:node  rss        > 500MB for 30s  clear 400MB
+alert chatty_writer process:*     write_bps  > 50MB  for 3s
