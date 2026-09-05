@@ -21,6 +21,7 @@ git clone https://github.com/Mohammed-Abdul-Raqueeb/vitals.git
 cd vitals
 
 cargo run --release
+
 ## Build & Run
 ```bash
 cargo build --release
