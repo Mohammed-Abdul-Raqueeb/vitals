@@ -1,9 +1,12 @@
 # vitals — live process/resource monitor with alerting
 
 Reads `/proc` directly on Linux. Zero dependencies — standard library only.
+## Requirements
 
-## Build & run
+Vitals runs natively on Linux because it reads the Linux `/proc` filesystem directly.
 
+The test suite can run on Windows using fabricated procfs fixtures, but the live monitor requires Linux or WSL on Windows.
+## Build & Run
 ```bash
 cargo build --release
 ./target/release/vitals                              # live TUI
