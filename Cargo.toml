@@ -1,0 +1,15 @@
+[package]
+name = "vitals"
+version = "0.1.0"
+edition = "2021"
+description = "Live per-process CPU/memory/IO monitor with user-defined alert rules, reading /proc directly"
+
+[dependencies]
+# none: standard library only
+
+[[bin]]
+name = "vitals"
+path = "src/bin/vitals.rs"
+
+[profile.release]
+opt-level = 3
